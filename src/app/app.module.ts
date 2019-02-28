@@ -1,4 +1,3 @@
-import { LoadingComponent } from './loading/loading.component';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
@@ -16,9 +15,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpModule } from '@angular/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ShareModule } from './share.module';
 
 @NgModule({
-  declarations: [AppComponent, LoadingComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -27,7 +27,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(FirebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpModule
+    HttpModule,
+    ShareModule
   ],
   providers: [
     StatusBar,

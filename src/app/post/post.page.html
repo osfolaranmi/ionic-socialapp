@@ -5,9 +5,12 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngIf="post | async as postData">
-    <ion-img src="https://ucarecdn.com/{{ postID }}/"></ion-img>
+
+  <app-loading *ngIf="!post"></app-loading>
+  <ion-card *ngIf="post as postData">
+    
     <ion-card-content>
+        <ion-img src="https://ucarecdn.com/{{ postID }}/-/preview/{{ effect }}"></ion-img>
         <p>{{ postData.desc }}</p>
      </ion-card-content>
     <ion-item  (click)="toggleHeart()">
@@ -15,3 +18,4 @@
     </ion-item>
   </ion-card>
 </ion-content>
+<!--*ngIf="post | async as postData"-->
